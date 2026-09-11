@@ -1,0 +1,13 @@
+{
+  "name": "quinns-skills",
+  "owner": {
+    "name": "Quinn"
+  },
+  "plugins": [
+    {
+      "name": "quinns-skills",
+      "source": "./",
+      "description": "Quinn's personal Claude Code skills."
+    }
+  ]
+}

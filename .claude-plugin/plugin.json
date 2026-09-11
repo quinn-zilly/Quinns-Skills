@@ -1,0 +1,34 @@
+{
+  "name": "quinns-skills",
+  "description": "Quinn's personal Claude Code skills.",
+  "version": "0.1.0",
+  "author": {
+    "name": "Quinn"
+  },
+  "hooks": {
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node \"${CLAUDE_PLUGIN_ROOT}/hooks/ste-activate.js\"",
+            "timeout": 5,
+            "statusMessage": "Loading Simplified Technical English..."
+          }
+        ]
+      }
+    ],
+    "UserPromptSubmit": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node \"${CLAUDE_PLUGIN_ROOT}/hooks/ste-reinforce.js\"",
+            "timeout": 5,
+            "statusMessage": "Reinforcing Simplified Technical English..."
+          }
+        ]
+      }
+    ]
+  }
+}
