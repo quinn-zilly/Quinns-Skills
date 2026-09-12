@@ -11,9 +11,9 @@
         "hooks": [
           {
             "type": "command",
-            "command": "node \"${CLAUDE_PLUGIN_ROOT}/hooks/ste-activate.js\"",
+            "command": "node \"${CLAUDE_PLUGIN_ROOT}/hooks/plain-english-activate.js\"",
             "timeout": 5,
-            "statusMessage": "Loading Simplified Technical English..."
+            "statusMessage": "Loading plain English..."
           }
         ]
       }
@@ -23,9 +23,9 @@
         "hooks": [
           {
             "type": "command",
-            "command": "node \"${CLAUDE_PLUGIN_ROOT}/hooks/ste-reinforce.js\"",
+            "command": "node \"${CLAUDE_PLUGIN_ROOT}/hooks/plain-english-reinforce.js\"",
             "timeout": 5,
-            "statusMessage": "Reinforcing Simplified Technical English..."
+            "statusMessage": "Reinforcing plain English..."
           }
         ]
       }

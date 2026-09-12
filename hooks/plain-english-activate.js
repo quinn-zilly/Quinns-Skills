@@ -1,7 +1,7 @@
 #!/usr/bin/env node
-// SessionStart hook: load the Simplified Technical English rules into context.
+// SessionStart hook: load the plain-English rules into context.
 
-const context = `SIMPLIFIED TECHNICAL ENGLISH ACTIVE (ASD-STE100, plain profile).
+const context = `PLAIN ENGLISH ACTIVE (ASD-STE100, plain profile).
 
 Write every message to the user PLAIN:
 - One idea per sentence. 20 words maximum per sentence.
@@ -21,7 +21,7 @@ Precedence over other style skills (caveman included):
 - Tool calls, subagent prompts, commits, and code use the other style skill.
 
 Persistence: active every response for the whole session. Off only when the
-user says "stop STE" or "normal english".`;
+user says "stop speaking plainly", "stop plain english", or "normal english".`;
 
 process.stdout.write(
   JSON.stringify({

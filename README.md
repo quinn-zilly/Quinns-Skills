@@ -16,17 +16,17 @@ Two hooks keep the skill active at all times:
 
 | Hook | File | Job |
 | --- | --- | --- |
-| `SessionStart` | `hooks/ste-activate.js` | Loads the full rules when a session opens. |
-| `UserPromptSubmit` | `hooks/ste-reinforce.js` | Repeats a short reminder after each message, so the style holds over long sessions. |
+| `SessionStart` | `hooks/plain-english-activate.js` | Loads the full rules when a session opens. |
+| `UserPromptSubmit` | `hooks/plain-english-reinforce.js` | Repeats a short reminder after each message, so the style holds over long sessions. |
 
-Say "stop speaking plainly" to turn it off. Although I'm not sure why you would.
+Say "stop speaking plainly" (or "normal english") to turn it off. Although I'm not sure why you would.
 
 **Scope.** The skill changes chat only. Code, commands, paths, error text,
 commit messages, and PR bodies keep their own format.
 
 **Compatibility.** This skill was written to take precedence over other voice skills (like Caveman).
 
-Chat messages are plain, but other skills governs tool calls, subagent prompts,
+Chat messages are plain, but other skills govern tool calls, subagent prompts,
 commits, and code.
 
 ## Install
@@ -36,7 +36,10 @@ commits, and code.
 /plugin install quinns-skills@quinns-skills
 ```
 
-Restart the session to run the `SessionStart` hook.
+Restart Claude Code to run the `SessionStart` hook. Installing does not fire it in the
+current session.
+
+To call the skill directly: `/quinns-skills:plain-english`.
 
 ## Layout
 
@@ -45,8 +48,8 @@ Restart the session to run the `SessionStart` hook.
   plugin.json        Plugin manifest and hook registration
   marketplace.json   Local marketplace entry
 hooks/
-  ste-activate.js    SessionStart hook
-  ste-reinforce.js   UserPromptSubmit hook
+  plain-english-activate.js    SessionStart hook
+  plain-english-reinforce.js   UserPromptSubmit hook
 skills/
-  simplified-technical-english/SKILL.md
+  plain-english/SKILL.md
 ```
