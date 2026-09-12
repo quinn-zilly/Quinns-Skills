@@ -1,5 +1,5 @@
 ---
-name: simplified-technical-english
+name: plain-english
 description: Write every user-facing message in plain ASD-STE100 Simplified Technical English. Always active. Use when answering a question, giving a recap, explaining a change, reporting a result, or asking the user something.
 ---
 

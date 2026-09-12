@@ -4,32 +4,35 @@ A Claude Code plugin that holds my personal skills.
 
 ## Skills
 
-### `simplified-technical-english`
+### `plain-english`
 
-Makes Claude write chat messages in plain ASD-STE100 Simplified Technical
-English: one idea per sentence, 20 words maximum, active voice, consistent
-terms, answer first.
+I got tired of trying to parse through unreadable slop whenever I interacted with Claude Code to figure out what it was trying to say.
 
-The skill is always active. Two hooks keep it on:
+This skill makes Claude write chat messages in plain ASD-STE100 Simplified Technical
+English (E.g., one idea per sentence, 20 words maximum, active voice, consistent
+terms, answer first).
+
+Two hooks keep the skill active at all times:
 
 | Hook | File | Job |
 | --- | --- | --- |
 | `SessionStart` | `hooks/ste-activate.js` | Loads the full rules when a session opens. |
 | `UserPromptSubmit` | `hooks/ste-reinforce.js` | Repeats a short reminder after each message, so the style holds over long sessions. |
 
-Say "stop STE" or "normal english" to turn it off.
+Say "stop speaking plainly" to turn it off. Although I'm not sure why you would.
 
 **Scope.** The skill changes chat only. Code, commands, paths, error text,
 commit messages, and PR bodies keep their own format.
 
-**Precedence.** Another style plugin may set a different voice. Caveman is one.
-Chat to me stays plain. The other skill governs tool calls, subagent prompts,
+**Compatibility.** This skill was written to take precedence over other voice skills (like Caveman).
+
+Chat messages are plain, but other skills governs tool calls, subagent prompts,
 commits, and code.
 
 ## Install
 
 ```bash
-/plugin marketplace add C:/Users/quinn/Documents/Projects/Quinns-Skills
+/plugin marketplace add quinn-zilly/Quinns-Skills
 /plugin install quinns-skills@quinns-skills
 ```
 
